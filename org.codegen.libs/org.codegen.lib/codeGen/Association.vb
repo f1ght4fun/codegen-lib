@@ -108,6 +108,7 @@ Public Class Association
 
         If Me.isCardinalityMany Then
             Dim sb As System.Text.StringBuilder = New System.Text.StringBuilder() ' TODO type initialisation here
+            sb.Append(vbTab & "<DataMember(Name:=""" + Me.associationName + """)>").Append(vbCrLf)
             sb.Append(vbTab & "private _deleted").Append(Me.associationName)
             sb.Append(" as List(Of " & Me.DataType & ")")
             sb.Append(" = new ").Append("List(Of " & Me.DataType & ")").Append("''''' initialize to empty list !!!")
