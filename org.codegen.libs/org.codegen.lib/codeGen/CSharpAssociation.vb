@@ -46,7 +46,7 @@ Public Class CSharpAssociation
 
         If Me.isCardinalityMany Then
             Dim sb As System.Text.StringBuilder = New System.Text.StringBuilder() ' TODO type initialisation here
-
+            sb.Append(vbTab & " [DataMember(Name=""Deleted" + Me.associationName + """)]")
             sb.Append(vbTab & " private List< " & Me.DataType & ">").Append(" _deleted").Append(Me.associationName)
             sb.Append(" = new ").Append("List< " & Me.DataType & ">();").Append("// initialize to empty list !!!")
             sb.Append(vbCrLf)
